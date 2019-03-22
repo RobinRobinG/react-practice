@@ -47,14 +47,12 @@ export default function App() {
       }
     }
   }
-
-
-  const preloadImages = () => 
+  const preloadImages = () => {
     cards.map((card) => {
       const src = `/img/${card.type}.png`
       new Image().src = src
     })
-
+  }
   const resetCards = () => {
     setFlipped([])
     setDisabled(false)
