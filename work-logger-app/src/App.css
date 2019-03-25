@@ -1,13 +1,21 @@
 .App {
   margin: 40px;
 }
-
 form {
   width: 600px;
+  font-weight: 600;
 }
-
 .card {
   width: 45%;
   margin: 20px 40px 0 0;
   display: inline-block;
+}
+.card-title {
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+ul {
+  padding: 0;
+  margin: 0;
 }

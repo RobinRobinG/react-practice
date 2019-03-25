@@ -14,7 +14,10 @@ class App extends Component {
     };
   }
   onHandleSubmit (data) {
-    if (data.project === 'personal') {
+    if (data.minutes < 0) {
+      alert('Minutes cannot be smaller than 0.')
+    }
+    else if (data.project === 'personal') {
       this.setState(prevState =>({
         personals: [...prevState.personals, {...data, id: Date.now()}],
         totalPersonalTime:  prevState.totalPersonalTime + parseInt(data.minutes)
@@ -32,7 +35,7 @@ class App extends Component {
         <h1>Work Logger App</h1>
         <WorkLogForm onFormSubmit = {(data) => this.onHandleSubmit(data)} />
         <hr />
-        <div className="cards">
+        <div className="d-flex justify-content-between align-items-start">
           <LogCard title = 'Work' log = {this.state.works} totalTime = { this.state.totalWorkTime } />
           <LogCard title = 'Personal' log = {this.state.personals} totalTime ={ this.state.totalPersonalTime } />
         </div>
